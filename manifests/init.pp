@@ -1,5 +1,8 @@
 # Set up periodic yum updates
-class yumupdate {
+class yumupdate (
+  $hour = $::yum_hour,
+  $minute = $::yum_minute,
+) {
   if $::osfamily == 'RedHat' {
 
     # basic yum.conf
@@ -27,8 +30,8 @@ class yumupdate {
 
     # Run yum updates every weekday
     cron { 'yum-update':
-      hour    => $::cron_hour,
-      minute  => $::cron_minute,
+      hour    => $hour,
+      minute  => $minute,
       weekday => [1-5],
       command => '/usr/bin/yum-update.bash',
       require => File['yum-update.bash'],

@@ -13,11 +13,21 @@ Manage `yum.conf` and schedule automatic yum updates.
 
 ## Usage
 
-The first version of this module takes no parameters, although more granular
-control is on the roadmap.
+Default behaviour is for the module to hash the node's IP address to generate an
+hour and a minute for the update cron job to run, to stagger yum updates across your
+esate.
 
 ```puppet
 include ::yumupdate
+```
+
+If you want to force the same time on every node, set these parameters:
+
+```puppet
+class { 'yumupdate':
+  hour   => 5,
+  minute => 30,
+}
 ```
 
 ## Limitations
