@@ -32,7 +32,7 @@ class yumupdate (
     cron { 'yum-update':
       hour    => $hour,
       minute  => $minute,
-      weekday => [1-5],
+      weekday => ['1-5'],
       command => '/usr/bin/yum-update.bash',
       require => File['yum-update.bash'],
     }
