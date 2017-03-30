@@ -9,7 +9,7 @@ class yumupdate {
       mode   => '0644',
       owner  => 'root',
       group  => 'root',
-      source => 'puppet:///modules/repos/yum.conf',
+      source => 'puppet:///modules/yumupdate/yum.conf',
     }
 
     # boot-time updates cause problems when the network is down, so we remove it
