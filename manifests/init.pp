@@ -40,7 +40,7 @@ class yumupdate {
       mode   => '0755',
       owner  => 'root',
       group  => 'root',
-      source => 'puppet:///modules/repos/yum-update.bash',
+      source => 'puppet:///modules/yumupdate/yum-update.bash',
     }
 
     # Override OS default rotation which is yearly
