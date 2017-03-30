@@ -1,6 +1,6 @@
 {
   "name": "jgazeley/yumupdate",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "author": "jgazeley",
   "summary": "Puppet module to handle Yum updates",
   "license": "Apache-2.0",
