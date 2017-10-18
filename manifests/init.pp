@@ -2,6 +2,7 @@
 class yumupdate (
   $hour = $::yum_hour,
   $minute = $::yum_minute,
+  $exclude = [],
 ) {
   if $::osfamily == 'RedHat' {
 
@@ -39,11 +40,11 @@ class yumupdate (
 
     # Install yum update script
     file { 'yum-update.bash':
-      name   => '/usr/bin/yum-update.bash',
-      mode   => '0755',
-      owner  => 'root',
-      group  => 'root',
-      source => 'puppet:///modules/yumupdate/yum-update.bash',
+      name    => '/usr/bin/yum-update.bash',
+      mode    => '0755',
+      owner   => 'root',
+      group   => 'root',
+      content => template('yumupdate/yum-update.bash.erb'),
     }
 
     # Override OS default rotation which is yearly
