@@ -1,8 +1,8 @@
 # Set up periodic yum updates
 class yumupdate (
-  $hour = $::yum_hour,
-  $minute = $::yum_minute,
-  $exclude = [],
+  Integer $hour = $::yum_hour,
+  Integer $minute = $::yum_minute,
+  Array $exclude = [],
 ) {
   if $::osfamily == 'RedHat' {
 
