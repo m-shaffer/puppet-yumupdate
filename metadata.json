@@ -8,7 +8,32 @@
   "project_page": "https://github.com/uobnetops/puppet-yumupdate",
   "issues_url": "https://github.com/uobnetops/puppet-yumupdate/issues",
   "dependencies": [
-    {"name":"yo61/logrotate","version_requirement":">= 1.0.0"}
+    {
+      "name":"puppet/logrotate","version_requirement":">= 3.0.0 < 4.0.0"
+    }
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 4.0.0 < 5.0.0"
+    }
   ]
 }
-
