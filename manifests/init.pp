@@ -2,6 +2,7 @@
 class yumupdate (
   Integer $hour = $::yum_hour,
   Integer $minute = $::yum_minute,
+  Array $weekday = ['1-5'],
   Array $exclude = [],
 ) {
   if $::osfamily == 'RedHat' {
@@ -33,7 +34,7 @@ class yumupdate (
     cron { 'yum-update':
       hour    => $hour,
       minute  => $minute,
-      weekday => ['1-5'],
+      weekday => $weekday,
       command => '/usr/bin/yum-update.bash',
       require => File['yum-update.bash'],
     }

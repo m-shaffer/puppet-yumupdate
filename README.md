@@ -15,13 +15,16 @@ Manage `yum.conf` and schedule automatic yum updates.
 
 Default behaviour is for the module to hash the node's IP address to generate an
 hour and a minute for the update cron job to run, to stagger yum updates across your
-esate.
+esate between 02:00 and 07:59 on weekdays.
 
 ### `hour`
-Cron hour that the update job should run, from 0-23
+Cron hour that the update job should run, from 0-23. Default: `$::cron_hour` (a random value between 2-7)
 
 ### `minute`
-Cron minute that the update job should run, from 0-59
+Cron minute that the update job should run, from 0-59. Default: `$::cron_minute` (a random value between 0-59)
+
+### `weekday`
+Day(s) of the week that the update job should run, specified as an array. Default: `['1-5']` (weekdays only)
 
 ### `exclude`
 Array of packages to exclude from the update job
